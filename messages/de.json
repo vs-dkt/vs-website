@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "products": "Producten",
+    "sectors": "Sectoren",
+    "technology": "Technologie",
+    "about": "Over Ons",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Van AI-adoptie naar AI-driven organisatie",
+      "subtitle": "VitalSail begeleidt organisaties bij de praktische adoptie en strategische inzet van Artificial Intelligence. Hands-on, sectorspecifiek en gericht op duurzame resultaten.",
+      "cta_primary": "Neem contact op",
+      "cta_secondary": "Ontdek onze diensten"
+    },
+    "proposition": {
+      "title": "Waarom VitalSail?",
+      "items": [
+        {
+          "title": "Strategisch AI-partner",
+          "body": "Wij denken mee op strategisch niveau en helpen de organisatie een duurzame koers te varen in het AI-landschap."
+        },
+        {
+          "title": "Technisch ontwikkelaar",
+          "body": "Van concept naar werkende oplossing. Wij bouwen de technische infrastructuur die uw AI-ambities realiteit maakt."
+        },
+        {
+          "title": "Kennispartner & Trainer",
+          "body": "Praktische, direct toepasbare kennis. Leren door te doen in de eigen werkomgeving."
+        },
+        {
+          "title": "Data-ethiek & Compliance",
+          "body": "AI inzetten zonder risico's. Wij zorgen dat juridische, ethische en technische randvoorwaarden altijd kloppen."
+        }
+      ]
+    },
+    "sectors": {
+      "title": "Onze doelmarkten",
+      "subtitle": "Sectorspecifieke expertise gecombineerd met brede AI-kennis.",
+      "items": ["Zorg", "Zakelijke Dienstverlening", "Real Estate"]
+    },
+    "maturity": {
+      "title": "Het AI-volwassenheidsmodel",
+      "subtitle": "Elke organisatie start op een ander punt. Wij begeleiden de volledige reis — van eerste bewustwording tot volledig AI-gedreven organisatie.",
+      "phases": [
+        { "nr": "01", "name": "AI-adoptie", "desc": "Bewustwording, basisbegrip en veilig starten" },
+        { "nr": "02", "name": "Operationalisatie", "desc": "AI inbedden in werkprocessen en workflows" },
+        { "nr": "03", "name": "Integratie & Governance", "desc": "AI-beleid, data-governance en compliance" },
+        { "nr": "04", "name": "Opschaling", "desc": "AI-infrastructuur, agents en multi-team workflows" },
+        { "nr": "05", "name": "AI-driven Organisatie", "desc": "Strategische waarde en forecasting" }
+      ]
+    },
+    "cta": {
+      "title": "Klaar om te starten?",
+      "body": "Ontdek waar uw organisatie staat en wat de volgende stap is.",
+      "button": "Vraag een AI-quickscan aan"
+    }
+  },
+  "services": {
+    "title": "Diensten",
+    "subtitle": "Een gelaagd dienstenpakket. Instappen op elk niveau, afhankelijk van uw AI-volwassenheid en ambitie.",
+    "items": [
+      {
+        "nr": "01",
+        "title": "Training & Workshops",
+        "desc": "Bewustwording, basisbegrip en praktische vaardigheden",
+        "items": ["Introductie generatieve AI", "Veilig en verantwoord AI-gebruik (AVG/privacy)", "Prompting basisvaardigheden", "AI in dagelijkse werkzaamheden", "Werken met Copilot / MS365", "Geavanceerd prompting", "AI als strategisch denkpartner", "Sectorspecifieke toepassingen"]
+      },
+      {
+        "nr": "02",
+        "title": "Coaching & Begeleiding",
+        "desc": "Individuele en teamcoaching on-the-job",
+        "items": ["1-op-1 AI-coaching", "Team AI-coaching on-the-job", "AI-ambassadeurs opleiden", "Vraagbaak en sparringpartner", "Promptbibliotheek opbouwen", "Begeleiding bij use-case-experimenten"]
+      },
+      {
+        "nr": "03",
+        "title": "Strategie & Consultancy",
+        "desc": "AI-strategie, governance en roadmap",
+        "items": ["AI-quickscan en volwassenheidsanalyse", "AI-strategie en roadmap", "Business case", "AI-governance model", "Data-governance advies", "Risicobeheer en ethiek", "Communicatieplan AI-adoptie"]
+      },
+      {
+        "nr": "04",
+        "title": "Implementatie & Tooling",
+        "desc": "Van pilot naar productie",
+        "items": ["Use-case selectie en prioritering", "Tool-selectie en benchmarking", "Copilot & MS365 implementatie", "Chatbot en AI-assistent bouwen", "Workflow-automatisering (n8n)", "Agentic AI-oplossingen", "Kennisbank/RAG-systeem", "API-integraties"]
+      },
+      {
+        "nr": "05",
+        "title": "AI as a Service",
+        "desc": "Managed AI-infrastructuur als volledig ontzorgd pakket",
+        "items": ["Complete AI tech stack (LLM + GenAI + agents)", "MCP-server inrichting", "Vector database beheer", "Knowledge graph", "AI-workflow management", "Maandelijks beheer en optimalisatie", "Sectorspecifieke AI-diensten"]
+      }
+    ]
+  },
+  "products": {
+    "title": "Producten",
+    "subtitle": "VitalSail ontwikkelt generieke AI-producten die wij zelf bouwen, producteren en als product exploiteren — schaalbaar en direct inzetbaar.",
+    "intro": "Naast maatwerkopdrachten investeert VitalSail in eigen AI-producten: digitale medewerkers, sectorspecifieke AI-assistenten en geautomatiseerde workflows die als standalone dienst worden aangeboden.",
+    "categories": [
+      {
+        "title": "AI-assistenten & Digitale Medewerkers",
+        "desc": "Autonome AI-agents die repetitieve kennisprocessen overnemen en schaalbaar inzetbaar zijn binnen sectoren."
+      },
+      {
+        "title": "Sectorproducten",
+        "desc": "Kant-en-klare AI-oplossingen voor zorg, vastgoed en zakelijke dienstverlening — geconfigureerd voor directe inzet."
+      },
+      {
+        "title": "Workflow Automatisering",
+        "desc": "Gestandaardiseerde automatiseringspakketten op basis van n8n en agentic AI voor terugkerende bedrijfsprocessen."
+      }
+    ],
+    "cta": "Neem contact op voor meer informatie over onze producten"
+  },
+  "sectors": {
+    "title": "Sectoren",
+    "subtitle": "Sectorspecifieke kennis gecombineerd met brede AI-expertise. Wij kennen de taal, de pijnpunten en de kansen in uw sector.",
+    "items": [
+      {
+        "title": "Zorg",
+        "sub": "Ziekenhuizen · GGZ · Huisartsenzorg · VVT · GGD · Zorgnetwerken",
+        "pain": "Documentatielast, administratiedruk, ketensamenwerking, personeelstekort.",
+        "opportunities": ["Automatische verslaglegging", "Kennisdeling en triage-ondersteuning", "Dossiercheck en compliance", "Roosteroptimalisatie", "MIC/VIC-rapportages versnellen"],
+        "note": "Bijzondere aandacht voor AVG en NEN7510."
+      },
+      {
+        "title": "Zakelijke Dienstverlening",
+        "sub": "Accountancy · Legal · Consultancy · HR · Financiële diensten",
+        "pain": "Kennisbeheer, rapportagedruk, klantcommunicatie, concurrentiedruk.",
+        "opportunities": ["Contractanalyse en -samenvatting", "Automatische klantrapportages", "Offerteproductie", "Research-automatisering", "Compliance-checks en due diligence"]
+      },
+      {
+        "title": "Real Estate",
+        "sub": "Makelaardijen · Vastgoedbeheer · Projectontwikkeling · Woningcorporaties",
+        "pain": "Documentatievolume, marktanalyse, klantverwachtingen, vergunningstrajecten.",
+        "opportunities": ["Automatische vastgoedbeschrijvingen", "Marktrapportages en waarde-analyses", "Huurder-/koperscommunicatie op schaal", "Due diligence dossiers", "Portefeuille-analyse en forecasting"]
+      }
+    ]
+  },
+  "technology": {
+    "title": "Technologie",
+    "subtitle": "VitalSail beschikt over diepgaande technische expertise in het volledige AI-stack. Van fundamentele taalmodellen tot productie-klare agent-architecturen.",
+    "areas": [
+      {
+        "title": "Large Language Models",
+        "desc": "Diepgaande kennis van de leidende LLMs — GPT, Claude, Gemini, Llama en open-source varianten. Wij selecteren het juiste model per use-case op basis van prestatie, kosten en privacy-vereisten."
+      },
+      {
+        "title": "AI Agents & Agentic Architecturen",
+        "desc": "Ontwerp en implementatie van autonome AI-agents die complexe meertraps-taken zelfstandig uitvoeren. Van enkelvoudige agents tot multi-agent systemen met gedeeld geheugen en orkestratie."
+      },
+      {
+        "title": "RAG & Vector Databases",
+        "desc": "Retrieval-Augmented Generation-systemen die organisatiekennis doorzoekbaar en bruikbaar maken voor AI. Implementatie van vector databases (Pinecone, Weaviate, pgvector) en kennisgrafen."
+      },
+      {
+        "title": "MCP & Integraties",
+        "desc": "Model Context Protocol (MCP) voor veilige, gestandaardiseerde koppelingen tussen AI-modellen en bedrijfssystemen. API-integraties met ERP, CRM, EPD en sectorspecifieke platformen."
+      },
+      {
+        "title": "GPU-hosting & Inferentie",
+        "desc": "Beheer van dedicated GPU-infrastructuur voor privé inferentie. Volledige controle over data, latency en kosten — zonder afhankelijkheid van publieke cloud-API's."
+      },
+      {
+        "title": "Workflow Automatisering",
+        "desc": "Bouw en beheer van geautomatiseerde AI-workflows via n8n, Make en custom pipelines. Van eenvoudige triggers tot complexe bedrijfsprocessen volledig zonder handmatige tussenkomst."
+      },
+      {
+        "title": "Vibe Coding & Rapid Development",
+        "desc": "AI-gedreven softwareontwikkeling waarbij wij in hoog tempo werkende applicaties en integraties bouwen — met AI als co-developer door het hele development-proces."
+      },
+      {
+        "title": "Data & Compliance",
+        "desc": "Data-architectuur, privacy-by-design en AVG/NEN7510-compliance als fundament onder alle technische oplossingen. Geen compromissen op beveiliging of ethiek."
+      }
+    ]
+  },
+  "about": {
+    "title": "Over VitalSail",
+    "mission_label": "Missie",
+    "mission": "Elke organisatie in staat stellen om AI verantwoord, effectief en met meetbare resultaten in te zetten — op eigen tempo, in eigen taal, passend bij eigen cultuur.",
+    "vision_label": "Visie",
+    "vision": "Organisaties die AI omarmen als strategisch gereedschap, zullen de standaard zetten in hun sector. VitalSail wil de partner zijn die hen daarheen brengt: van eerste verkenning tot volledig AI-gedreven organisatie inclusief de technische voorzieningen.",
+    "story_label": "Ons verhaal",
+    "story": "VitalSail BV is opgericht vanuit de overtuiging dat AI-adoptie geen technologisch, maar een menselijk en organisatorisch vraagstuk is. Wij overbruggen de kloof tussen de technologische mogelijkheden van AI en de dagelijkse werkpraktijk van professionals.\n\nOnze aanpak is altijd hands-on, sectorspecifiek en gericht op duurzame verandering — niet op eenmalige pilots die verdampen na de kick-off. Wij begrijpen dat echte transformatie vraagt om begeleiding op maat, continue verbetering en een partner die meegaat op de reis.",
+    "values_label": "Onderscheidend vermogen",
+    "values": [
+      { "title": "Sectorkennis", "desc": "Wij spreken de taal van zorg, vastgoed en zakelijke dienstverlening." },
+      { "title": "Van strategie tot executie", "desc": "Geen advies zonder implementatie." },
+      { "title": "Verantwoord en AVG-proof", "desc": "Privacy, ethiek en compliance zijn geen bijzaak." },
+      { "title": "Doorlopend partnerschap", "desc": "Van eerste workshop tot borging en opschaling." },
+      { "title": "Pragmatisch", "desc": "Tastbare resultaten vóór theoretische perfectie." },
+      { "title": "Technisch leidend", "desc": "State of the art AI stacks, van hergebruik tot maatwerk." }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Wilt u meer weten, een kennismaking plannen of direct een offerte ontvangen?",
+    "email_label": "E-mail",
+    "website_label": "Website",
+    "kvk_label": "KvK-nummer",
+    "form": {
+      "name": "Naam",
+      "email": "E-mailadres",
+      "organization": "Organisatie",
+      "message": "Bericht",
+      "submit": "Verstuur",
+      "success": "Uw bericht is verzonden. Wij nemen spoedig contact met u op."
+    }
+  },
+  "footer": {
+    "tagline": "Van AI-adoptie naar AI-driven organisatie",
+    "privacy": "Privacybeleid",
+    "copyright": "© {year} VitalSail BV. Alle rechten voorbehouden."
+  }
+}
