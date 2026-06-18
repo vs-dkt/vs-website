@@ -36,10 +36,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
-          <Image src="/images/icon.png" alt="VitalSail" width={36} height={36} priority />
-          <span className="font-black text-xl" style={{ fontFamily: 'Lato, sans-serif' }}>
-            <span style={{ color: '#3EC288' }}>Vital</span><span style={{ color: '#0F6FC6' }}>Sail</span>
-          </span>
+          <Image src="/images/logo-nieuw.jpg" alt="VitalSail" width={180} height={46} priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
