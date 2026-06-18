@@ -1,32 +1,28 @@
-import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import { sanityFetch } from '@/lib/sanity'
+import { servicesPageQuery } from '@/lib/queries'
+import { fallbackServices } from '@/lib/fallback'
 
-export default function DienstenPage() {
-  const t = useTranslations('services')
-  const locale = useLocale()
+type ServicesData = typeof fallbackServices
 
-  const services = [0, 1, 2, 3, 4].map(i => ({
-    nr: t(`items.${i}.nr`),
-    title: t(`items.${i}.title`),
-    desc: t(`items.${i}.desc`),
-    items: [0, 1, 2, 3, 4, 5, 6, 7].map(j => {
-      try { return t(`items.${i}.items.${j}`) } catch { return null }
-    }).filter(Boolean) as string[]
-  }))
+export default async function DienstenPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const raw = await sanityFetch<ServicesData | null>(servicesPageQuery, { locale })
+  const d = raw ?? fallbackServices
 
   return (
     <>
       <section className="vs-gradient text-white py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-widest text-white/60 mb-4">VitalSail</p>
-          <h1 className="text-5xl font-black mb-6">{t('title')}</h1>
-          <p className="text-xl text-white/80 max-w-2xl">{t('subtitle')}</p>
+          <h1 className="text-5xl font-black mb-6">{d.title}</h1>
+          <p className="text-xl text-white/80 max-w-2xl">{d.subtitle}</p>
         </div>
       </section>
 
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto space-y-12">
-          {services.map((service, i) => (
+          {d.services.map((service, i) => (
             <div key={i} className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 rounded-2xl border border-gray-100 hover:border-[#009DD9]/20 hover:shadow-lg transition-all">
               <div className="lg:col-span-1">
                 <div className="text-5xl font-black vs-gradient-text mb-3">{service.nr}</div>
@@ -38,7 +34,7 @@ export default function DienstenPage() {
                   {service.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#009DD9] shrink-0" />
-                      <span className="text-sm text-gray-700">{item}</span>
+                      <span className="text-sm text-gray-700">{item.label}</span>
                     </li>
                   ))}
                 </ul>

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { sanityFetch } from '@/lib/sanity'
+import { navigationQuery } from '@/lib/queries'
+import { fallbackNavigation } from '@/lib/fallback'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 
@@ -12,10 +13,7 @@ export const metadata: Metadata = {
     template: '%s | VitalSail'
   },
   description: 'VitalSail begeleidt organisaties bij de praktische adoptie en strategische inzet van Artificial Intelligence.',
-  openGraph: {
-    siteName: 'VitalSail',
-    type: 'website'
-  }
+  openGraph: { siteName: 'VitalSail', type: 'website' }
 }
 
 export function generateStaticParams() {
@@ -35,16 +33,15 @@ export default async function LocaleLayout({
     notFound()
   }
 
-  const messages = await getMessages()
+  const raw = await sanityFetch<typeof fallbackNavigation | null>(navigationQuery, { locale })
+  const nav = raw ?? fallbackNavigation
 
   return (
     <html lang={locale} className="h-full scroll-smooth">
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <Navbar locale={locale} nav={nav} />
+        <main className="flex-1">{children}</main>
+        <Footer locale={locale} nav={nav} />
       </body>
     </html>
   )
