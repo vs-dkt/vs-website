@@ -18,6 +18,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const navLinks = [
+    { href: '', label: nav.home },
     { href: '/diensten', label: nav.services },
     { href: '/producten', label: nav.products },
     { href: '/sectoren', label: nav.sectors },
@@ -35,7 +36,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
+        <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0 opacity-90 hover:opacity-100 transition-opacity" title="Home">
           <Image src="/images/logo-nieuw.jpg" alt="VitalSail" width={180} height={59} priority />
         </Link>
 
