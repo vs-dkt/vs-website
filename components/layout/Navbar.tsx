@@ -36,7 +36,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
-          <Image src="/images/logo-nieuw.jpg" alt="VitalSail" width={180} height={46} priority />
+          <Image src="/images/logo-nieuw.jpg" alt="VitalSail" width={180} height={59} priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
