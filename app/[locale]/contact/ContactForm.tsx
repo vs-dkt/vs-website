@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 type Labels = {
   name: string
@@ -13,10 +13,36 @@ type Labels = {
 
 export default function ContactForm({ labels }: { labels: Labels }) {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const formRef = useRef<HTMLFormElement>(null)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+
+    const form = formRef.current!
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      organization: (form.elements.namedItem('organization') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value
+    }
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+
+    setLoading(false)
+
+    if (res.ok) {
+      setSubmitted(true)
+    } else {
+      setError('Er is iets misgegaan. Probeer het opnieuw of mail naar info@vitalsail.ai.')
+    }
   }
 
   if (submitted) {
@@ -29,7 +55,7 @@ export default function ContactForm({ labels }: { labels: Labels }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
       {[
         { name: 'name', label: labels.name, type: 'text', required: true },
         { name: 'email', label: labels.email, type: 'email', required: true },
@@ -58,11 +84,13 @@ export default function ContactForm({ labels }: { labels: Labels }) {
           className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 text-sm focus:outline-none focus:border-[#009DD9] transition-colors resize-none"
         />
       </div>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
       <button
         type="submit"
-        className="w-full py-4 vs-gradient text-white font-black rounded-lg text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
+        disabled={loading}
+        className="w-full py-4 vs-gradient text-white font-black rounded-lg text-sm uppercase tracking-widest hover:opacity-90 transition-opacity disabled:opacity-60"
       >
-        {labels.submit}
+        {loading ? '...' : labels.submit}
       </button>
     </form>
   )
