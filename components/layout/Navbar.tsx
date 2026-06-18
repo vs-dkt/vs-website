@@ -52,7 +52,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
         <div className="hidden lg:flex items-center gap-1 ml-8">
           {(['nl', 'en', 'de'] as const).map(l => (
             <button key={l} onClick={() => switchLocale(l)}
-              className={`px-2 py-1 text-xs font-bold rounded transition-colors ${locale === l ? 'text-white bg-[#009DD9]' : 'text-gray-500 hover:text-[#009DD9]'}`}>
+              className={`px-2 py-1 text-xs font-bold rounded transition-colors cursor-pointer ${locale === l ? 'text-white bg-[#009DD9]' : 'text-gray-500 hover:text-[#009DD9]'}`}>
               {localeLabels[l]}
             </button>
           ))}
