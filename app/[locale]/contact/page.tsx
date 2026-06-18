@@ -35,6 +35,14 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <p className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-1">KvK-nummer</p>
               <p className="text-gray-700 font-semibold">42007328</p>
             </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-1">Adres</p>
+              <p className="text-gray-700 font-semibold leading-relaxed">
+                Oosthavendijk 46<br />
+                3241 LK Middelharnis<br />
+                The Netherlands
+              </p>
+            </div>
           </div>
           <ContactForm
             labels={{
