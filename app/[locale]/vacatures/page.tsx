@@ -1,11 +1,25 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PortableText } from '@portabletext/react'
 import { sanityFetch } from '@/lib/sanity'
 import { vacanciesPageQuery, vacanciesQuery } from '@/lib/queries'
 import { fallbackVacanciesPage } from '@/lib/fallback'
 
 type VacanciesPageData = typeof fallbackVacanciesPage
-type Vacancy = { _id: string; title: string; description: string }
+type PortableTextBlock = { _type: string; _key: string; [key: string]: unknown }
+type Vacancy = { _id: string; title: string; description: PortableTextBlock[] | null }
+
+const ptComponents = {
+  block: {
+    h2: ({ children }: { children?: React.ReactNode }) => <h2 className="text-xl font-black text-gray-900 mt-6 mb-2">{children}</h2>,
+    h3: ({ children }: { children?: React.ReactNode }) => <h3 className="text-lg font-bold text-gray-900 mt-4 mb-2">{children}</h3>,
+    normal: ({ children }: { children?: React.ReactNode }) => <p className="text-gray-600 mb-3 leading-relaxed">{children}</p>
+  },
+  list: {
+    bullet: ({ children }: { children?: React.ReactNode }) => <ul className="list-disc list-inside space-y-1 mb-3 text-gray-600">{children}</ul>,
+    number: ({ children }: { children?: React.ReactNode }) => <ol className="list-decimal list-inside space-y-1 mb-3 text-gray-600">{children}</ol>
+  }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -48,7 +62,11 @@ export default async function VacaturesPage({ params }: { params: Promise<{ loca
               {list.map(vacancy => (
                 <div key={vacancy._id} className="p-8 rounded-2xl border border-gray-100 hover:border-[#009DD9]/30 hover:shadow-lg transition-all">
                   <h2 className="text-2xl font-black text-gray-900 mb-4">{vacancy.title}</h2>
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-line mb-8">{vacancy.description}</div>
+                  <div className="mb-8">
+                    {vacancy.description
+                      ? <PortableText value={vacancy.description} components={ptComponents} />
+                      : null}
+                  </div>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href="mailto:info@vitalsail.ai"

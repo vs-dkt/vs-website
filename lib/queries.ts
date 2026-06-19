@@ -137,7 +137,7 @@ export const vacanciesQuery = groq`
   *[_type == "vacancy" && active == true] | order(publishedAt desc) {
     _id,
     ${loc('title')},
-    ${loc('description')}
+    "description": coalesce(description[$locale], description.nl)
   }
 `
 
