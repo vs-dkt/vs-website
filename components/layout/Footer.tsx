@@ -53,9 +53,9 @@ export default function Footer({ locale, nav }: { locale: string; nav: Nav }) {
 
         <div className="border-t border-white/20 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/50">© {year} VitalSail BV. Alle rechten voorbehouden.</p>
-          <Link href={`/${locale}/privacy`} className="text-xs text-white/50 hover:text-white/80 transition-colors">
+          <span className="text-xs text-white/50 hover:text-white/80 transition-colors cursor-default">
             {nav.footerPrivacy}
-          </Link>
+          </span>
         </div>
       </div>
     </footer>
