@@ -21,7 +21,9 @@ export default defineType({
         ]
       })]
     }),
-    localizedString('ctaLabel', 'CTA tekst')
+    localizedString('ctaLabel', 'CTA tekst'),
+    localizedString('seoTitle', 'SEO titel (Google)'),
+    localizedText('seoDescription', 'SEO omschrijving (Google, max 160 tekens)')
   ],
   preview: { prepare: () => ({ title: 'Producten pagina' }) }
 })

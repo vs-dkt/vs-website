@@ -1,9 +1,23 @@
+import type { Metadata } from 'next'
 import { sanityFetch } from '@/lib/sanity'
 import { contactPageQuery } from '@/lib/queries'
 import { fallbackContact } from '@/lib/fallback'
 import ContactForm from './ContactForm'
 
 type ContactData = typeof fallbackContact
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<ContactData | null>(contactPageQuery, { locale })
+  const title = d?.seoTitle || 'Contact — VitalSail'
+  const description = d?.seoDescription || 'Neem contact op met VitalSail voor vragen over AI-adoptie, strategie of samenwerking. We reageren binnen één werkdag.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}/contact`, siteName: 'VitalSail' },
+    alternates: { canonical: `https://vitalsail.ai/${locale}/contact` }
+  }
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

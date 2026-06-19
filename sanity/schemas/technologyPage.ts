@@ -19,7 +19,9 @@ export default defineType({
           localizedText('desc', 'Omschrijving')
         ]
       })]
-    })
+    }),
+    localizedString('seoTitle', 'SEO titel (Google)'),
+    localizedText('seoDescription', 'SEO omschrijving (Google, max 160 tekens)')
   ],
   preview: { prepare: () => ({ title: 'Technologie pagina' }) }
 })

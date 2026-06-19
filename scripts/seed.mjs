@@ -103,7 +103,17 @@ const docs = [
       'Discover where your organisation stands and what the next step is.',
       'Entdecken Sie, wo Ihre Organisation steht und was der nächste Schritt ist.'
     ),
-    ctaButton: ls('Vraag een AI-quickscan aan', 'Request an AI quick scan', 'KI-Schnellscan anfordern')
+    ctaButton: ls('Vraag een AI-quickscan aan', 'Request an AI quick scan', 'KI-Schnellscan anfordern'),
+    seoTitle: ls(
+      'VitalSail — Van AI-adoptie naar AI-driven organisatie',
+      'VitalSail — From AI adoption to AI-driven organisation',
+      'VitalSail — Von der KI-Adoption zur KI-gesteuerten Organisation'
+    ),
+    seoDescription: ls(
+      'VitalSail begeleidt organisaties bij de praktische adoptie en strategische inzet van AI. Hands-on, sectorspecifiek en gericht op duurzame resultaten.',
+      'VitalSail guides organisations in the practical adoption and strategic deployment of AI. Hands-on, sector-specific and focused on lasting results.',
+      'VitalSail begleitet Organisationen bei der praktischen Einführung und dem strategischen Einsatz von KI. Praxisnah, branchenspezifisch und auf nachhaltige Ergebnisse ausgerichtet.'
+    )
   },
   {
     _type: 'servicesPage',
@@ -113,6 +123,12 @@ const docs = [
       'Een gelaagd dienstenpakket. Instappen op elk niveau, afhankelijk van uw AI-volwassenheid en ambitie.',
       'A layered service offering. Enter at any level, depending on your AI maturity and ambition.',
       'Ein gestaffeltes Leistungsangebot. Einstieg auf jeder Ebene, abhängig von Ihrer KI-Reife und Ihren Ambitionen.'
+    ),
+    seoTitle: ls('Diensten — VitalSail', 'Services — VitalSail', 'Leistungen — VitalSail'),
+    seoDescription: ls(
+      'Ontdek hoe VitalSail organisaties begeleidt met AI-workshops, strategische sessies, implementatie en coaching voor duurzame AI-adoptie.',
+      'Discover how VitalSail guides organisations with AI workshops, strategic sessions, implementation and coaching for lasting AI adoption.',
+      'Entdecken Sie, wie VitalSail Organisationen mit KI-Workshops, strategischen Sitzungen, Implementierung und Coaching für nachhaltige KI-Adoption begleitet.'
     ),
     services: [
       {
@@ -231,6 +247,12 @@ const docs = [
       'Neem contact op voor meer informatie over onze producten',
       'Contact us for more information about our products',
       'Kontaktieren Sie uns für weitere Informationen zu unseren Produkten'
+    ),
+    seoTitle: ls('AI-producten — VitalSail', 'AI Products — VitalSail', 'KI-Produkte — VitalSail'),
+    seoDescription: ls(
+      'VitalSail bouwt generieke AI-producten: intelligente assistenten, geautomatiseerde workflows en sector-specifieke AI-toepassingen. Schaalbaar en direct inzetbaar.',
+      'VitalSail builds generic AI products: intelligent assistants, automated workflows and sector-specific AI applications. Scalable and immediately deployable.',
+      'VitalSail entwickelt generische KI-Produkte: intelligente Assistenten, automatisierte Workflows und branchenspezifische KI-Anwendungen. Skalierbar und sofort einsetzbar.'
     )
   },
   {
@@ -241,6 +263,12 @@ const docs = [
       'Sectorspecifieke kennis gecombineerd met brede AI-expertise. Wij kennen de taal, de pijnpunten en de kansen in uw sector.',
       'Sector-specific knowledge combined with broad AI expertise. We know the language, pain points and opportunities in your sector.',
       'Branchenspezifisches Wissen kombiniert mit breiter KI-Expertise. Wir kennen die Sprache, die Schmerzpunkte und die Chancen in Ihrer Branche.'
+    ),
+    seoTitle: ls('Sectoren — VitalSail', 'Sectors — VitalSail', 'Branchen — VitalSail'),
+    seoDescription: ls(
+      'VitalSail biedt sectorspecifieke AI-oplossingen voor zorg, zakelijke dienstverlening en vastgoed. Ontdek de AI-kansen in uw branche.',
+      'VitalSail offers sector-specific AI solutions for healthcare, professional services and real estate. Discover the AI opportunities in your industry.',
+      'VitalSail bietet branchenspezifische KI-Lösungen für das Gesundheitswesen, professionelle Dienstleistungen und Immobilien. Entdecken Sie die KI-Chancen in Ihrer Branche.'
     ),
     sectors: [
       {
@@ -292,6 +320,12 @@ const docs = [
       'VitalSail beschikt over diepgaande technische expertise in het volledige AI-stack. Van fundamentele taalmodellen tot productie-klare agent-architecturen.',
       'VitalSail has in-depth technical expertise across the full AI stack. From fundamental language models to production-ready agent architectures.',
       'VitalSail verfügt über tiefgreifende technische Expertise im gesamten KI-Stack. Von grundlegenden Sprachmodellen bis hin zu produktionsreifen Agenten-Architekturen.'
+    ),
+    seoTitle: ls('Technologie — VitalSail', 'Technology — VitalSail', 'Technologie — VitalSail'),
+    seoDescription: ls(
+      'VitalSail heeft expertise in LLMs, AI-agents, vector databases, MCP, GPU-hosting en vibe-coding. Ontdek onze volledige technologische propositie.',
+      'VitalSail has expertise in LLMs, AI agents, vector databases, MCP, GPU hosting and vibe coding. Discover our full technology proposition.',
+      'VitalSail verfügt über Expertise in LLMs, KI-Agenten, Vektordatenbanken, MCP, GPU-Hosting und Vibe-Coding. Entdecken Sie unsere vollständige Technologieproposition.'
     ),
     areas: [
       {
@@ -379,6 +413,12 @@ const docs = [
       'VitalSail BV was founded with the conviction that AI adoption is not a technological but a human and organisational challenge. We bridge the gap between the technological capabilities of AI and the daily work practice of professionals.\n\nOur approach is always hands-on, sector-specific and focused on lasting change — not on one-off pilots that evaporate after the kick-off. We understand that real transformation requires tailored guidance, continuous improvement and a partner who goes along on the journey.',
       'VitalSail BV wurde in der Überzeugung gegründet, dass die KI-Adoption keine technologische, sondern eine menschliche und organisatorische Herausforderung ist. Wir überbrücken die Kluft zwischen den technologischen Möglichkeiten der KI und der täglichen Arbeitspraxis von Fachleuten.\n\nUnser Ansatz ist immer praxisnah, branchenspezifisch und auf nachhaltige Veränderungen ausgerichtet — nicht auf einmalige Piloten, die nach dem Kick-off verpuffen. Wir verstehen, dass echte Transformation maßgeschneiderte Begleitung, kontinuierliche Verbesserung und einen Partner erfordert, der den Weg mitgeht.'
     ),
+    seoTitle: ls('Over Ons — VitalSail', 'About Us — VitalSail', 'Über Uns — VitalSail'),
+    seoDescription: ls(
+      'VitalSail is een AI-adoptie consultancy met missie om organisaties hands-on te begeleiden naar een AI-driven toekomst. Sectorspecifiek, pragmatisch en technisch leidend.',
+      'VitalSail is an AI adoption consultancy with a mission to guide organisations hands-on towards an AI-driven future. Sector-specific, pragmatic and technically leading.',
+      'VitalSail ist eine KI-Adoptionsberatung mit der Mission, Organisationen hands-on in eine KI-gesteuerte Zukunft zu begleiten. Branchenspezifisch, pragmatisch und technisch führend.'
+    ),
     values: [
       { title: ls('Sectorkennis', 'Sector knowledge', 'Branchenwissen'), desc: ls('Wij spreken de taal van zorg, vastgoed en zakelijke dienstverlening.', 'We speak the language of healthcare, real estate and professional services.', 'Wir sprechen die Sprache des Gesundheitswesens, der Immobilien und der professionellen Dienstleistungen.') },
       { title: ls('Van strategie tot executie', 'From strategy to execution', 'Von der Strategie zur Umsetzung'), desc: ls('Geen advies zonder implementatie.', 'No advice without implementation.', 'Keine Beratung ohne Umsetzung.') },
@@ -406,6 +446,12 @@ const docs = [
       'Uw bericht is verzonden. Wij nemen spoedig contact met u op.',
       'Your message has been sent. We will contact you shortly.',
       'Ihre Nachricht wurde gesendet. Wir werden uns in Kürze bei Ihnen melden.'
+    ),
+    seoTitle: ls('Contact — VitalSail', 'Contact — VitalSail', 'Kontakt — VitalSail'),
+    seoDescription: ls(
+      'Neem contact op met VitalSail voor vragen over AI-adoptie, strategie of samenwerking. We reageren binnen één werkdag.',
+      'Get in touch with VitalSail for questions about AI adoption, strategy or collaboration. We respond within one working day.',
+      'Kontaktieren Sie VitalSail für Fragen zu KI-Adoption, Strategie oder Zusammenarbeit. Wir antworten innerhalb eines Werktages.'
     )
   }
 ]

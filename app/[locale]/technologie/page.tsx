@@ -1,8 +1,22 @@
+import type { Metadata } from 'next'
 import { sanityFetch } from '@/lib/sanity'
 import { technologyPageQuery } from '@/lib/queries'
 import { fallbackTechnology } from '@/lib/fallback'
 
 type TechData = typeof fallbackTechnology
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<TechData | null>(technologyPageQuery, { locale })
+  const title = d?.seoTitle || 'Technologie — VitalSail'
+  const description = d?.seoDescription || 'VitalSail heeft expertise in LLM\'s, AI-agents, vector databases, MCP, GPU-hosting en vibe-coding. Ontdek onze technologische propositie.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}/technologie`, siteName: 'VitalSail' },
+    alternates: { canonical: `https://vitalsail.ai/${locale}/technologie` }
+  }
+}
 
 export default async function TechnologiePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

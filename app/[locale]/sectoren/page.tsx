@@ -1,8 +1,22 @@
+import type { Metadata } from 'next'
 import { sanityFetch } from '@/lib/sanity'
 import { sectorsPageQuery } from '@/lib/queries'
 import { fallbackSectors } from '@/lib/fallback'
 
 type SectorsData = typeof fallbackSectors
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<SectorsData | null>(sectorsPageQuery, { locale })
+  const title = d?.seoTitle || 'Sectoren — VitalSail'
+  const description = d?.seoDescription || 'VitalSail biedt sectorspecifieke AI-oplossingen voor zorg, zakelijke dienstverlening en vastgoed. Ontdek de AI-kansen in uw branche.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}/sectoren`, siteName: 'VitalSail' },
+    alternates: { canonical: `https://vitalsail.ai/${locale}/sectoren` }
+  }
+}
 
 export default async function SectorenPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

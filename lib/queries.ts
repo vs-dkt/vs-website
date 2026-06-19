@@ -1,7 +1,6 @@
 import { groq } from 'next-sanity'
 
 const loc = (field: string) => `"${field}": coalesce(${field}[$locale], ${field}.nl, "")`
-const locObj = (field: string) => `${field} { nl, en, de }`
 
 export const homePageQuery = groq`
   *[_type == "homePage"][0] {
@@ -25,7 +24,9 @@ export const homePageQuery = groq`
     },
     ${loc('ctaTitle')},
     ${loc('ctaBody')},
-    ${loc('ctaButton')}
+    ${loc('ctaButton')},
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -40,7 +41,9 @@ export const servicesPageQuery = groq`
       "items": items[] {
         "label": coalesce(label[$locale], label.nl, "")
       }
-    }
+    },
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -53,7 +56,9 @@ export const productsPageQuery = groq`
       "title": coalesce(title[$locale], title.nl, ""),
       "desc": coalesce(desc[$locale], desc.nl, "")
     },
-    ${loc('ctaLabel')}
+    ${loc('ctaLabel')},
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -69,7 +74,9 @@ export const sectorsPageQuery = groq`
         "label": coalesce(label[$locale], label.nl, "")
       },
       "note": coalesce(note[$locale], note.nl, "")
-    }
+    },
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -80,7 +87,9 @@ export const technologyPageQuery = groq`
     "areas": areas[] {
       "title": coalesce(title[$locale], title.nl, ""),
       "desc": coalesce(desc[$locale], desc.nl, "")
-    }
+    },
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -93,7 +102,9 @@ export const aboutPageQuery = groq`
     "values": values[] {
       "title": coalesce(title[$locale], title.nl, ""),
       "desc": coalesce(desc[$locale], desc.nl, "")
-    }
+    },
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 
@@ -106,7 +117,9 @@ export const contactPageQuery = groq`
     ${loc('formOrgLabel')},
     ${loc('formMessageLabel')},
     ${loc('formSubmitLabel')},
-    ${loc('formSuccessMessage')}
+    ${loc('formSuccessMessage')},
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
   }
 `
 

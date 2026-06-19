@@ -1,9 +1,23 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { sanityFetch } from '@/lib/sanity'
 import { homePageQuery } from '@/lib/queries'
 import { fallbackHome } from '@/lib/fallback'
 
 type HomeData = typeof fallbackHome
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<HomeData | null>(homePageQuery, { locale })
+  const title = d?.seoTitle || 'VitalSail — AI-adoptie & strategie'
+  const description = d?.seoDescription || 'VitalSail begeleidt organisaties bij de praktische adoptie en strategische inzet van AI. Hands-on, sectorspecifiek en gericht op duurzame resultaten.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}`, siteName: 'VitalSail', locale },
+    alternates: { canonical: `https://vitalsail.ai/${locale}` }
+  }
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

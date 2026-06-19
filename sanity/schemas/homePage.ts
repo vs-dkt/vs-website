@@ -48,7 +48,9 @@ export default defineType({
     }),
     localizedString('ctaTitle', 'CTA titel'),
     localizedText('ctaBody', 'CTA tekst'),
-    localizedString('ctaButton', 'CTA knoptekst')
+    localizedString('ctaButton', 'CTA knoptekst'),
+    localizedString('seoTitle', 'SEO titel (Google)'),
+    localizedText('seoDescription', 'SEO omschrijving (Google, max 160 tekens)')
   ],
   preview: { prepare: () => ({ title: 'Home pagina' }) }
 })

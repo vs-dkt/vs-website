@@ -1,9 +1,23 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { sanityFetch } from '@/lib/sanity'
 import { productsPageQuery } from '@/lib/queries'
 import { fallbackProducts } from '@/lib/fallback'
 
 type ProductsData = typeof fallbackProducts
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<ProductsData | null>(productsPageQuery, { locale })
+  const title = d?.seoTitle || 'AI-producten — VitalSail'
+  const description = d?.seoDescription || 'VitalSail bouwt generieke AI-producten: intelligente assistenten, geautomatiseerde workflows en sector-specifieke AI-toepassingen.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}/producten`, siteName: 'VitalSail' },
+    alternates: { canonical: `https://vitalsail.ai/${locale}/producten` }
+  }
+}
 
 export default async function ProductenPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

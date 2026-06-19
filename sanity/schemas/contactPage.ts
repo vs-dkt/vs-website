@@ -13,7 +13,9 @@ export default defineType({
     localizedString('formOrgLabel', 'Formulier: Organisatie label'),
     localizedString('formMessageLabel', 'Formulier: Bericht label'),
     localizedString('formSubmitLabel', 'Formulier: Verstuur knop'),
-    localizedText('formSuccessMessage', 'Succesbericht na verzenden')
+    localizedText('formSuccessMessage', 'Succesbericht na verzenden'),
+    localizedString('seoTitle', 'SEO titel (Google)'),
+    localizedText('seoDescription', 'SEO omschrijving (Google, max 160 tekens)')
   ],
   preview: { prepare: () => ({ title: 'Contact pagina' }) }
 })

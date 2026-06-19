@@ -29,7 +29,9 @@ export default defineType({
           })
         ]
       })]
-    })
+    }),
+    localizedString('seoTitle', 'SEO titel (Google)'),
+    localizedText('seoDescription', 'SEO omschrijving (Google, max 160 tekens)')
   ],
   preview: { prepare: () => ({ title: 'Diensten pagina' }) }
 })

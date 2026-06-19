@@ -1,8 +1,22 @@
+import type { Metadata } from 'next'
 import { sanityFetch } from '@/lib/sanity'
 import { aboutPageQuery } from '@/lib/queries'
 import { fallbackAbout } from '@/lib/fallback'
 
 type AboutData = typeof fallbackAbout
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const d = await sanityFetch<AboutData | null>(aboutPageQuery, { locale })
+  const title = d?.seoTitle || 'Over Ons — VitalSail'
+  const description = d?.seoDescription || 'VitalSail is een AI-adoptie consultancy met missie om organisaties hands-on te begeleiden naar een AI-driven toekomst.'
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `https://vitalsail.ai/${locale}/over-ons`, siteName: 'VitalSail' },
+    alternates: { canonical: `https://vitalsail.ai/${locale}/over-ons` }
+  }
+}
 
 export default async function OverOnsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
