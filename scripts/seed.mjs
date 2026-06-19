@@ -26,7 +26,29 @@ const docs = [
       'From AI adoption to AI-driven organisation',
       'Von der KI-Adoption zur KI-gesteuerten Organisation'
     ),
-    footerPrivacy: ls('Privacybeleid', 'Privacy Policy', 'Datenschutz')
+    footerPrivacy: ls('Privacybeleid', 'Privacy Policy', 'Datenschutz'),
+    vacancies: ls('Vacatures', 'Vacancies', 'Stellenangebote')
+  },
+  {
+    _type: 'vacanciesPage',
+    _id: 'vacancies-singleton',
+    title: ls('Vacatures', 'Vacancies', 'Stellenangebote'),
+    subtitle: ls(
+      'Kom werken bij VitalSail. Wij zijn op zoek naar mensen die gepassioneerd zijn over AI en organisaties willen helpen groeien.',
+      'Come work at VitalSail. We are looking for people who are passionate about AI and want to help organisations grow.',
+      'Kommen Sie zu VitalSail. Wir suchen Menschen, die für KI begeistert sind und Organisationen beim Wachsen helfen möchten.'
+    ),
+    emptyMessage: ls(
+      'Er zijn momenteel geen openstaande vacatures. Stuur gerust een open sollicitatie naar info@vitalsail.ai.',
+      'There are currently no open vacancies. Feel free to send an open application to info@vitalsail.ai.',
+      'Derzeit gibt es keine offenen Stellen. Sie können gerne eine Initiativbewerbung an info@vitalsail.ai senden.'
+    ),
+    seoTitle: ls('Vacatures — VitalSail', 'Vacancies — VitalSail', 'Stellenangebote — VitalSail'),
+    seoDescription: ls(
+      'Bekijk de openstaande vacatures bij VitalSail. Kom werken aan de toekomst van AI-adoptie.',
+      'View the open vacancies at VitalSail. Come work on the future of AI adoption.',
+      'Sehen Sie die offenen Stellen bei VitalSail. Arbeiten Sie an der Zukunft der KI-Adoption.'
+    )
   },
   {
     _type: 'homePage',

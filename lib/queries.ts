@@ -123,6 +123,24 @@ export const contactPageQuery = groq`
   }
 `
 
+export const vacanciesPageQuery = groq`
+  *[_type == "vacanciesPage"][0] {
+    ${loc('title')},
+    ${loc('subtitle')},
+    ${loc('emptyMessage')},
+    ${loc('seoTitle')},
+    ${loc('seoDescription')}
+  }
+`
+
+export const vacanciesQuery = groq`
+  *[_type == "vacancy" && active == true] | order(publishedAt desc) {
+    _id,
+    ${loc('title')},
+    ${loc('description')}
+  }
+`
+
 export const navigationQuery = groq`
   *[_type == "navigation"][0] {
     "home": coalesce(home[$locale], home.nl, "Home"),
@@ -133,6 +151,7 @@ export const navigationQuery = groq`
     "about": coalesce(about[$locale], about.nl, "Over Ons"),
     "contact": coalesce(contact[$locale], contact.nl, "Contact"),
     "footerTagline": coalesce(footerTagline[$locale], footerTagline.nl, ""),
-    "footerPrivacy": coalesce(footerPrivacy[$locale], footerPrivacy.nl, "Privacybeleid")
+    "footerPrivacy": coalesce(footerPrivacy[$locale], footerPrivacy.nl, "Privacybeleid"),
+    "vacancies": coalesce(vacancies[$locale], vacancies.nl, "Vacatures")
   }
 `

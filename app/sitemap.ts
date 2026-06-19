@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 const locales = ['nl', 'en', 'de']
-const pages = ['', '/diensten', '/producten', '/sectoren', '/technologie', '/over-ons', '/contact']
+const pages = ['', '/diensten', '/producten', '/sectoren', '/technologie', '/over-ons', '/vacatures', '/contact']
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []

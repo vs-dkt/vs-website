@@ -131,6 +131,15 @@ export const fallbackNavigation = {
   technology: 'Technologie',
   about: 'Over Ons',
   contact: 'Contact',
+  vacancies: 'Vacatures',
   footerTagline: 'Van AI-adoptie naar AI-driven organisatie',
   footerPrivacy: 'Privacybeleid'
+}
+
+export const fallbackVacanciesPage = {
+  title: 'Vacatures',
+  subtitle: 'Kom werken bij VitalSail. Wij zijn op zoek naar mensen die gepassioneerd zijn over AI en organisaties willen helpen groeien.',
+  emptyMessage: 'Er zijn momenteel geen openstaande vacatures. Stuur gerust een open sollicitatie naar info@vitalsail.ai.',
+  seoTitle: 'Vacatures — VitalSail',
+  seoDescription: 'Bekijk de openstaande vacatures bij VitalSail. Kom werken aan de toekomst van AI-adoptie in Nederland.'
 }

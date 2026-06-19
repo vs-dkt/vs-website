@@ -13,6 +13,7 @@ export default defineType({
     localizedString('technology', 'Technologie'),
     localizedString('about', 'Over Ons'),
     localizedString('contact', 'Contact'),
+    localizedString('vacancies', 'Vacatures'),
     localizedString('footerTagline', 'Footer tagline'),
     localizedString('footerPrivacy', 'Privacy label')
   ],
