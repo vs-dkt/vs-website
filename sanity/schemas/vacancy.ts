@@ -13,9 +13,9 @@ export default defineType({
   ],
   preview: {
     select: { title: 'title.nl', active: 'active' },
-    prepare: ({ title, active }: { title: string; active: boolean }) => ({
-      title: title || 'Nieuwe vacature',
-      subtitle: active ? 'Actief' : 'Inactief'
+    prepare: (selection: Record<string, unknown>) => ({
+      title: (selection.title as string) || 'Nieuwe vacature',
+      subtitle: selection.active ? 'Actief' : 'Inactief'
     })
   }
 })
