@@ -23,12 +23,16 @@ export const fallbackHome = {
   ],
   ctaTitle: 'Klaar om te starten?',
   ctaBody: 'Ontdek waar uw organisatie staat en wat de volgende stap is.',
-  ctaButton: 'Vraag een AI-quickscan aan'
+  ctaButton: 'Vraag een AI-quickscan aan',
+  seoTitle: 'VitalSail — Van AI-adoptie naar AI-driven organisatie',
+  seoDescription: 'VitalSail begeleidt organisaties bij de praktische adoptie en strategische inzet van AI. Hands-on, sectorspecifiek en gericht op duurzame resultaten.'
 }
 
 export const fallbackServices = {
   title: 'Diensten',
   subtitle: 'Een gelaagd dienstenpakket. Instappen op elk niveau, afhankelijk van uw AI-volwassenheid en ambitie.',
+  seoTitle: 'Diensten — VitalSail',
+  seoDescription: 'Ontdek hoe VitalSail organisaties begeleidt met AI-workshops, strategische sessies, implementatie en coaching voor duurzame AI-adoptie.',
   services: [
     { nr: '01', title: 'Training & Workshops', desc: 'Bewustwording, basisbegrip en praktische vaardigheden',
       items: [{ label: 'Introductie generatieve AI' }, { label: 'Veilig en verantwoord AI-gebruik (AVG/privacy)' }, { label: 'Prompting basisvaardigheden' }, { label: 'AI in dagelijkse werkzaamheden' }, { label: 'Werken met Copilot / MS365' }, { label: 'Geavanceerd prompting' }, { label: 'AI als strategisch denkpartner' }, { label: 'Sectorspecifieke toepassingen' }] },
@@ -52,12 +56,16 @@ export const fallbackProducts = {
     { title: 'Sectorproducten', desc: 'Kant-en-klare AI-oplossingen voor zorg, vastgoed en zakelijke dienstverlening — geconfigureerd voor directe inzet.' },
     { title: 'Workflow Automatisering', desc: 'Gestandaardiseerde automatiseringspakketten op basis van n8n en agentic AI voor terugkerende bedrijfsprocessen.' }
   ],
-  ctaLabel: 'Neem contact op voor meer informatie over onze producten'
+  ctaLabel: 'Neem contact op voor meer informatie over onze producten',
+  seoTitle: 'AI-producten — VitalSail',
+  seoDescription: 'VitalSail bouwt generieke AI-producten: intelligente assistenten, geautomatiseerde workflows en sector-specifieke AI-toepassingen.'
 }
 
 export const fallbackSectors = {
   title: 'Sectoren',
   subtitle: 'Sectorspecifieke kennis gecombineerd met brede AI-expertise.',
+  seoTitle: 'Sectoren — VitalSail',
+  seoDescription: 'VitalSail biedt sectorspecifieke AI-oplossingen voor zorg, zakelijke dienstverlening en vastgoed. Ontdek de AI-kansen in uw branche.',
   sectors: [
     { title: 'Zorg', sub: 'Ziekenhuizen · GGZ · Huisartsenzorg · VVT · GGD · Zorgnetwerken', pain: 'Documentatielast, administratiedruk, ketensamenwerking, personeelstekort.',
       opportunities: [{ label: 'Automatische verslaglegging' }, { label: 'Kennisdeling en triage-ondersteuning' }, { label: 'Dossiercheck en compliance' }, { label: 'Roosteroptimalisatie' }, { label: 'MIC/VIC-rapportages versnellen' }], note: 'Bijzondere aandacht voor AVG en NEN7510.' },
@@ -71,6 +79,8 @@ export const fallbackSectors = {
 export const fallbackTechnology = {
   title: 'Technologie',
   subtitle: 'VitalSail beschikt over diepgaande technische expertise in het volledige AI-stack.',
+  seoTitle: 'Technologie — VitalSail',
+  seoDescription: 'VitalSail heeft expertise in LLMs, AI-agents, vector databases, MCP, GPU-hosting en vibe-coding. Ontdek onze volledige technologische propositie.',
   areas: [
     { title: 'Large Language Models', desc: 'Diepgaande kennis van de leidende LLMs — GPT, Claude, Gemini, Llama en open-source varianten. Wij selecteren het juiste model per use-case op basis van prestatie, kosten en privacy-vereisten.' },
     { title: 'AI Agents & Agentic Architecturen', desc: 'Ontwerp en implementatie van autonome AI-agents die complexe meertraps-taken zelfstandig uitvoeren. Van enkelvoudige agents tot multi-agent systemen met gedeeld geheugen en orkestratie.' },
@@ -88,6 +98,8 @@ export const fallbackAbout = {
   mission: 'Elke organisatie in staat stellen om AI verantwoord, effectief en met meetbare resultaten in te zetten — op eigen tempo, in eigen taal, passend bij eigen cultuur.',
   vision: 'Organisaties die AI omarmen als strategisch gereedschap, zullen de standaard zetten in hun sector. VitalSail wil de partner zijn die hen daarheen brengt: van eerste verkenning tot volledig AI-gedreven organisatie inclusief de technische voorzieningen.',
   story: 'VitalSail BV is opgericht vanuit de overtuiging dat AI-adoptie geen technologisch, maar een menselijk en organisatorisch vraagstuk is. Wij overbruggen de kloof tussen de technologische mogelijkheden van AI en de dagelijkse werkpraktijk van professionals.\n\nOnze aanpak is altijd hands-on, sectorspecifiek en gericht op duurzame verandering — niet op eenmalige pilots die verdampen na de kick-off.',
+  seoTitle: 'Over Ons — VitalSail',
+  seoDescription: 'VitalSail is een AI-adoptie consultancy met missie om organisaties hands-on te begeleiden naar een AI-driven toekomst.',
   values: [
     { title: 'Sectorkennis', desc: 'Wij spreken de taal van zorg, vastgoed en zakelijke dienstverlening.' },
     { title: 'Van strategie tot executie', desc: 'Geen advies zonder implementatie.' },
@@ -106,7 +118,9 @@ export const fallbackContact = {
   formOrgLabel: 'Organisatie',
   formMessageLabel: 'Bericht',
   formSubmitLabel: 'Verstuur',
-  formSuccessMessage: 'Uw bericht is verzonden. Wij nemen spoedig contact met u op.'
+  formSuccessMessage: 'Uw bericht is verzonden. Wij nemen spoedig contact met u op.',
+  seoTitle: 'Contact — VitalSail',
+  seoDescription: 'Neem contact op met VitalSail voor vragen over AI-adoptie, strategie of samenwerking. We reageren binnen één werkdag.'
 }
 
 export const fallbackNavigation = {
