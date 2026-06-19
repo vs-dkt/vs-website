@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { routing } from '@/i18n/routing'
 import { sanityFetch } from '@/lib/sanity'
 import { navigationQuery } from '@/lib/queries'
 import { fallbackNavigation } from '@/lib/fallback'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+
+const GA_ID = 'G-1LJCS3DCWE'
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +42,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="h-full scroll-smooth">
       <body className="min-h-full flex flex-col">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
         <Navbar locale={locale} nav={nav} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} nav={nav} />
