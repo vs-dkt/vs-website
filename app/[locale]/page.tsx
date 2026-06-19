@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    openGraph: { title, description, url: `https://vitalsail.ai/${locale}`, siteName: 'VitalSail', locale },
-    alternates: { canonical: `https://vitalsail.ai/${locale}` }
+    openGraph: { title, description, url: `https://www.vitalsail.ai/${locale}`, siteName: 'VitalSail', locale },
+    alternates: { canonical: `https://www.vitalsail.ai/${locale}` }
   }
 }
 
