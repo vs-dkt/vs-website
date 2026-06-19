@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 type Nav = {
   services: string; products: string; sectors: string
-  technology: string; about: string; contact: string
+  technology: string; about: string; vacancies: string; contact: string
   footerTagline: string; footerPrivacy: string
 }
 
@@ -16,6 +16,7 @@ export default function Footer({ locale, nav }: { locale: string; nav: Nav }) {
     { href: '/sectoren', label: nav.sectors },
     { href: '/technologie', label: nav.technology },
     { href: '/over-ons', label: nav.about },
+    { href: '/vacatures', label: nav.vacancies },
     { href: '/contact', label: nav.contact }
   ]
 
