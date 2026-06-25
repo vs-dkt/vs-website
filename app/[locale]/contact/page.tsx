@@ -56,6 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <div>
               <p className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-1">Adres</p>
               <p className="text-gray-700 font-semibold leading-relaxed">
+                VitalSail BV<br />
                 Oosthavendijk 46<br />
                 3241 LK Middelharnis<br />
                 The Netherlands
