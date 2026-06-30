@@ -53,7 +53,8 @@ sanity/schemas/           # 10 schemas: navigation, homePage, servicesPage, prod
                           # vacanciesPage, vacancy
 
 scripts/seed.mjs          # Seed script: vult Sanity met NL/EN/DE content
-i18n/routing.ts           # locales: ['nl', 'en', 'de'], defaultLocale: 'nl'
+i18n/routing.ts           # locales: ['nl', 'en', 'de'], defaultLocale: 'nl', pathnames-map
+i18n/navigation.ts        # createNavigation(routing): Link, usePathname, useRouter, getPathname
 proxy.ts                  # i18n middleware (Next.js 16: heet proxy.ts, niet middleware.ts)
 public/
   favicon.ico             # Klassieke favicon (16/32px)
@@ -108,6 +109,18 @@ Staan in `.env.local` (lokaal) en in Vercel project settings (productie).
 - Fallback metadata hardcoded in elke page.tsx
 - Google Search Console: `www.vitalsail.ai` property, sitemap ingediend en succesvol (21 pagina's)
 - Google verificatie TXT-record staat op `@` bij TransIP
+- `localeDetection: false` — taal wordt altijd bepaald door de URL, nooit door cookie/Accept-Language (voorkomt dat bezoekers met een andere voorkeurstaal-cookie de verkeerde taalversie van een URL te zien krijgen)
+- **Gelokaliseerde URL-paden** (`pathnames` in `i18n/routing.ts`): elke taal heeft zijn eigen pad-segment i.p.v. de NL-slug overal:
+  - `/nl/diensten` ↔ `/en/services` ↔ `/de/leistungen`
+  - `/nl/producten` ↔ `/en/products` ↔ `/de/produkte`
+  - `/nl/sectoren` ↔ `/en/sectors` ↔ `/de/branchen`
+  - `/nl/over-ons` ↔ `/en/about-us` ↔ `/de/ueber-uns`
+  - `/nl/vacatures` ↔ `/en/vacancies` ↔ `/de/stellenangebote`
+  - `/nl/contact` ↔ `/en/contact` ↔ `/de/kontakt`
+  - `/nl/technologie` ↔ `/en/technology` ↔ `/de/technologie` (gelijk in alle talen)
+  - Oude/onvertaalde URLs redirecten automatisch (307) naar de juiste localized URL via de next-intl middleware
+  - Links in code MOETEN via `@/i18n/navigation` (`Link`, `usePathname`, `useRouter`, `getPathname`) i.p.v. `next/link` of `next/navigation` — anders werkt de vertaling van paden niet
+  - Bij een nieuwe pagina: voeg een entry toe aan `pathnames` in `i18n/routing.ts` én aan de `pages`-array in `app/sitemap.ts`
 
 ## Bedrijfsgegevens (hardcoded in contact/page.tsx)
 - E-mail: info@vitalsail.ai
