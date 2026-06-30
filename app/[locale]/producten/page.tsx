@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { sanityFetch } from '@/lib/sanity'
 import { productsPageQuery } from '@/lib/queries'
 import { fallbackProducts } from '@/lib/fallback'
+import { buildAlternates } from '@/lib/seo'
 
 type ProductsData = typeof fallbackProducts
 
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     openGraph: { title, description, url: `https://www.vitalsail.ai/${locale}/producten`, siteName: 'VitalSail' },
-    alternates: { canonical: `https://www.vitalsail.ai/${locale}/producten` }
+    alternates: buildAlternates('/producten', locale)
   }
 }
 

@@ -4,6 +4,7 @@ import { PortableText } from '@portabletext/react'
 import { sanityFetch } from '@/lib/sanity'
 import { vacanciesPageQuery, vacanciesQuery } from '@/lib/queries'
 import { fallbackVacanciesPage } from '@/lib/fallback'
+import { buildAlternates } from '@/lib/seo'
 
 type VacanciesPageData = typeof fallbackVacanciesPage
 type PortableTextBlock = { _type: string; _key: string; [key: string]: unknown }
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     openGraph: { title, description, url: `https://www.vitalsail.ai/${locale}/vacatures`, siteName: 'VitalSail' },
-    alternates: { canonical: `https://www.vitalsail.ai/${locale}/vacatures` }
+    alternates: buildAlternates('/vacatures', locale)
   }
 }
 

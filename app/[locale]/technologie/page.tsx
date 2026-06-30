@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { sanityFetch } from '@/lib/sanity'
 import { technologyPageQuery } from '@/lib/queries'
 import { fallbackTechnology } from '@/lib/fallback'
+import { buildAlternates } from '@/lib/seo'
 
 type TechData = typeof fallbackTechnology
 
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     openGraph: { title, description, url: `https://www.vitalsail.ai/${locale}/technologie`, siteName: 'VitalSail' },
-    alternates: { canonical: `https://www.vitalsail.ai/${locale}/technologie` }
+    alternates: buildAlternates('/technologie', locale)
   }
 }
 

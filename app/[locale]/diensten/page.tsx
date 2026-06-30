@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { sanityFetch } from '@/lib/sanity'
 import { servicesPageQuery } from '@/lib/queries'
 import { fallbackServices } from '@/lib/fallback'
+import { buildAlternates } from '@/lib/seo'
 
 type ServicesData = typeof fallbackServices
 
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     openGraph: { title, description, url: `https://www.vitalsail.ai/${locale}/diensten`, siteName: 'VitalSail' },
-    alternates: { canonical: `https://www.vitalsail.ai/${locale}/diensten` }
+    alternates: buildAlternates('/diensten', locale)
   }
 }
 
