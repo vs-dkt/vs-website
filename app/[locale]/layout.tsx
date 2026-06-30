@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { NextIntlClientProvider } from 'next-intl'
 import Script from 'next/script'
 import { routing } from '@/i18n/routing'
 import { sanityFetch } from '@/lib/sanity'
@@ -49,9 +50,11 @@ export default async function LocaleLayout({
           gtag('js', new Date());
           gtag('config', '${GA_ID}');
         `}</Script>
-        <Navbar locale={locale} nav={nav} />
-        <main className="flex-1">{children}</main>
-        <Footer locale={locale} nav={nav} />
+        <NextIntlClientProvider locale={locale}>
+          <Navbar locale={locale} nav={nav} />
+          <main className="flex-1">{children}</main>
+          <Footer locale={locale} nav={nav} />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

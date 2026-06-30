@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { sanityFetch } from '@/lib/sanity'
 import { productsPageQuery } from '@/lib/queries'
 import { fallbackProducts } from '@/lib/fallback'
@@ -52,7 +52,7 @@ export default async function ProductenPage({ params }: { params: Promise<{ loca
 
       <section className="py-20 px-6 bg-[#f8fafc] text-center">
         <p className="text-lg text-gray-600 mb-8">{d.ctaLabel}</p>
-        <Link href={`/${locale}/contact`} className="inline-block px-8 py-4 vs-gradient text-white font-black rounded-lg text-sm uppercase tracking-wide hover:opacity-90 transition-opacity">
+        <Link href="/contact" className="inline-block px-8 py-4 vs-gradient text-white font-black rounded-lg text-sm uppercase tracking-wide hover:opacity-90 transition-opacity">
           Contact opnemen
         </Link>
       </section>

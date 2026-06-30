@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { PortableText } from '@portabletext/react'
 import { sanityFetch } from '@/lib/sanity'
 import { vacanciesPageQuery, vacanciesQuery } from '@/lib/queries'
@@ -76,7 +76,7 @@ export default async function VacaturesPage({ params }: { params: Promise<{ loca
                       Mail ons
                     </a>
                     <Link
-                      href={`/${locale}/contact`}
+                      href="/contact"
                       className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#009DD9] text-[#009DD9] font-bold rounded-lg text-sm uppercase tracking-wide hover:bg-[#009DD9]/5 transition-colors"
                     >
                       Contactformulier

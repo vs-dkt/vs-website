@@ -1,7 +1,7 @@
 'use client'
 
-import { useRouter, usePathname } from 'next/navigation'
-import Link from 'next/link'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
+import type { AppPathname } from '@/i18n/routing'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -17,8 +17,8 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const navLinks = [
-    { href: '', label: nav.home },
+  const navLinks: { href: AppPathname; label: string }[] = [
+    { href: '/', label: nav.home },
     { href: '/diensten', label: nav.services },
     { href: '/producten', label: nav.products },
     { href: '/sectoren', label: nav.sectors },
@@ -29,21 +29,19 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
   ]
 
   function switchLocale(newLocale: string) {
-    const segments = pathname.split('/')
-    segments[1] = newLocale
-    router.push(segments.join('/'))
+    router.replace(pathname, { locale: newLocale })
   }
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0 opacity-90 hover:opacity-100 transition-opacity" title="Home">
+        <Link href="/" className="flex items-center gap-2 shrink-0 opacity-90 hover:opacity-100 transition-opacity" title="Home">
           <Image src="/images/logo-nieuw.jpg" alt="VitalSail" width={150} height={49} priority />
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map(link => (
-            <Link key={link.href} href={`/${locale}${link.href}`}
+            <Link key={link.href} href={link.href}
               className="text-xs font-semibold text-gray-700 hover:text-[#009DD9] transition-colors tracking-wide uppercase">
               {link.label}
             </Link>
@@ -69,7 +67,7 @@ export default function Navbar({ locale, nav }: { locale: string; nav: Nav }) {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 px-6 pb-4">
           {navLinks.map(link => (
-            <Link key={link.href} href={`/${locale}${link.href}`}
+            <Link key={link.href} href={link.href}
               className="block py-3 text-xs font-semibold text-gray-700 border-b border-gray-50 uppercase tracking-wide"
               onClick={() => setMobileOpen(false)}>
               {link.label}

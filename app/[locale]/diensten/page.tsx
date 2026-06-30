@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { sanityFetch } from '@/lib/sanity'
 import { servicesPageQuery } from '@/lib/queries'
 import { fallbackServices } from '@/lib/fallback'
@@ -61,7 +61,7 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
 
       <section className="py-20 px-6 bg-[#0F6FC6] text-white text-center">
         <h2 className="text-3xl font-black mb-6">Klaar voor de volgende stap?</h2>
-        <Link href={`/${locale}/contact`} className="inline-block px-8 py-4 bg-white text-[#0F6FC6] font-black rounded-lg text-sm uppercase tracking-wide hover:bg-white/90 transition-colors">
+        <Link href="/contact" className="inline-block px-8 py-4 bg-white text-[#0F6FC6] font-black rounded-lg text-sm uppercase tracking-wide hover:bg-white/90 transition-colors">
           Neem contact op
         </Link>
       </section>

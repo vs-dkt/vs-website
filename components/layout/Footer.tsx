@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import type { AppPathname } from '@/i18n/routing'
 import Image from 'next/image'
 
 type Nav = {
@@ -10,7 +11,7 @@ type Nav = {
 export default function Footer({ locale, nav }: { locale: string; nav: Nav }) {
   const year = new Date().getFullYear()
 
-  const links = [
+  const links: { href: AppPathname; label: string }[] = [
     { href: '/diensten', label: nav.services },
     { href: '/producten', label: nav.products },
     { href: '/sectoren', label: nav.sectors },
@@ -34,7 +35,7 @@ export default function Footer({ locale, nav }: { locale: string; nav: Nav }) {
             <ul className="space-y-2">
               {links.map(l => (
                 <li key={l.href}>
-                  <Link href={`/${locale}${l.href}`} className="text-sm text-white/80 hover:text-white transition-colors">
+                  <Link href={l.href} className="text-sm text-white/80 hover:text-white transition-colors">
                     {l.label}
                   </Link>
                 </li>
